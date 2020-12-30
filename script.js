@@ -1,5 +1,5 @@
  
-let nama, val;
+let nama, value;
 const url_string = document.URL;
 const url = new URL(url_string);
 let sender;
@@ -7,7 +7,7 @@ let sender;
 if (url.searchParams.get('by') != null) {
   sender = url.searchParams.get('by');
 } else {
-  sender = "Alip";
+  sender = "Alif";
 }
 
 
@@ -22,7 +22,7 @@ document.querySelector(".tombol").addEventListener('click', function () {
           title: 'Masukin nama kamu dulu',
           input: 'text',
           inputLabel: '',
-          showCancelButton: false,
+          showCancelButton: true,
           inputValidator: (value) => {
             if (!value) {
               return 'Isi dulu dong bagong'
