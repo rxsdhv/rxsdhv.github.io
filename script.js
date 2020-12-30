@@ -26,7 +26,7 @@ document.querySelector(".tombol").addEventListener('click', function () {
           inputValidator: (value) => {
             if (!value) {
               return 'Isi dulu dong bagong'
-            } else {
+            } else 'masa ga pake nama?' }
               nama = value;
             }
           }
