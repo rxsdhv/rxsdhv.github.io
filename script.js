@@ -22,11 +22,11 @@ document.querySelector(".tombol").addEventListener('click', function () {
           title: 'Masukin nama kamu dulu',
           input: 'text',
           inputLabel: '',
-          showCancelButton: true,
+          showCancelButton: false,
           inputValidator: (value) => {
             if (!value) {
               return 'Isi dulu dong bagong'
-            } else 'masa ga pake nama?' }
+            } else {
               nama = value;
             }
           }
