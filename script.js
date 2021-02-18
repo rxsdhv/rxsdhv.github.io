@@ -40,7 +40,7 @@ document.querySelector(".tombol").addEventListener('click', function () {
           }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-              Swal.fire(`${sender} Jangan boong ${nama}`).then(function () {
+              Swal.fire('${nama} Jangan boong`).then(function () {
                 Swal.fire({
                   title: 'Seberapa sayang?',
                   icon: 'question',
