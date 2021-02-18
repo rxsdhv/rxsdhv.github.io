@@ -7,7 +7,7 @@ let sender;
 if (url.searchParams.get('by') != null) {
   sender = url.searchParams.get('by');
 } else {
-  sender = "Alif";
+  sender = "Eja";
 }
 
 
@@ -32,46 +32,46 @@ document.querySelector(".tombol").addEventListener('click', function () {
           }
         }).then(function () {
           const pertanyaan = Swal.fire({
-            title: `${nama} Sering gabut ga sama ${sender}?`,
+            title: `${nama} Beneran sayang sama ${sender}?`,
             showDenyButton: true,
             showCancelButton: false,
-            confirmButtonText: `Sering`,
-            denyButtonText: `Jarang`,
+            confirmButtonText: `Iya`,
+            denyButtonText: `Gkkk`,
           }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-              Swal.fire(`${sender} Sama sih, suka gabut sama ${nama}`).then(function () {
+              Swal.fire(`${sender} Jangan boong ${nama}`).then(function () {
                 Swal.fire({
-                  title: 'Seberapa gabut?',
+                  title: 'Seberapa sayang?',
                   icon: 'question',
                   input: 'range',
-                  inputLabel: 'Antara 1 - 100 ya',
+                  inputLabel: 'Antara 1 - 1000',
                   inputAttributes: {
                     min: 1,
-                    max: 100,
+                    max: 1000,
                     step: 1
                   },
                   inputValue: 50
                 }).then((e) => {
                   val = e.value
-                  Swal.fire(`Makasih udah jawab ya ${nama} ${val}%`).then(function () {
+                  Swal.fire(`Wah mantul juga, ${nama} ${val}%`).then(function () {
                     Swal.fire({
-                      title: `Sekarang ${nama} ikut pusink sama ${sender}?`,
+                      title: `Tapi, ${nama} tau ga? kalo ini ga tercatat sama ${sender}?`,
                       showDenyButton: true,
                       showCancelButton: false,
-                      confirmButtonText: `Iya wkwkwk`,
-                      denyButtonText: `Engga B aja`,
+                      confirmButtonText: `Engga...`,
+                      denyButtonText: `Tau`,
                     }).then((result) => {
                       /* Read more about isConfirmed, isDenied below */
                       if (result.isConfirmed) {
-                        Swal.fire(`Huhu iya ${sender} juga pusink, makasihhh ${nama}`).then(function () {
+                        Swal.fire(`Hehe ${sender} minta maap wkwk ${nama}`).then(function () {
                           Swal.fire('Terakhir deh').then(function () {
                             Swal.fire('Coba klik ikon hati di paling bawah dong')
                           })
                         })
                       } else if (result.isDenied) {
-                        Swal.fire('yahhh , Emang ga gabut???', '', 'error').then(function () {
-                          Swal.fire('Yauda iyainn bagong')
+                        Swal.fire('Serius engga?', '', 'error').then(function () {
+                          Swal.fire('Yauda iya :)')
                         })
                       }
                     })
@@ -79,8 +79,8 @@ document.querySelector(".tombol").addEventListener('click', function () {
                 })
               })
             } else if (result.isDenied) {
-              Swal.fire(`Yg bener jarang gabut sama ${sender}?`, '', 'error').then(function () {
-                Swal.fire('Yauda iya iya iya')
+              Swal.fire(`Yg bener ga sayang sama ${sender}?`, '', 'error').then(function () {
+                Swal.fire('hm ok')
               })
             }
           })
